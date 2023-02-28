@@ -17,6 +17,10 @@ package team.gif.robot;
  */
 public final class Constants {
 
+    public static class OperatorConstants {
+        public static final int kDriverControllerPort = 0;
+    }
+
     public static class Shooter {
         public static final double kP = 0.0007; // 0.0005; // set to 0 and find
         public static final double kF = 0.000175; // 0.000166;

@@ -5,7 +5,6 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import team.gif.robot.RobotMap;
 
 public class Pigeon {
 
@@ -21,19 +20,6 @@ public class Pigeon {
         _pigeon = new PigeonIMU(talon);
     }
 
-    private static Pigeon instance = null;
-
-    public static Pigeon getInstance() {
-        if (instance == null) {
-            instance = new Pigeon();
-        }
-        return instance;
-    }
-
-    public Pigeon(){
-        _pigeon = new PigeonIMU(RobotMap.PIGEON);
-        instance = this;
-    }
     public void addToShuffleboard(String tabName, String widgetTitle) {
         // Puts a Gyro type widget on dashboard and assigns
         // the function getHeading_Shuffleboard

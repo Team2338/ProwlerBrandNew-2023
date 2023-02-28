@@ -1,15 +1,10 @@
 package team.gif.robot;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
 import team.gif.lib.autoMode;
 import team.gif.lib.delay;
-import team.gif.robot.commands.drivetrain.ResetHeading;
 
 //import static team.gif.robot.Robot.elevator;
 
