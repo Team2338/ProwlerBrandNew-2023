@@ -62,7 +62,7 @@ public class Robot extends TimedRobot {
     private SendableChooser<autoMode> autoModeChooser = new SendableChooser<>();
     private SendableChooser<delay> delayChooser = new SendableChooser<>();
 
-    public Drivetrain drivetrain;
+    public static Drivetrain drivetrain;
 
     public static Limelight limelight;
 //    private final Compressor compressor = new Compressor();
@@ -160,7 +160,9 @@ public class Robot extends TimedRobot {
         hanger.zeroEncoder();
 
         drivetrain = new Drivetrain();
-        driveCommand = new Drive(drivetrain);
+
+        drivetrain.setDefaultCommand(new Drive());
+//        driveCommand = new Drive(drivetrain);
         limelight = new Limelight();
 
         // Puts a button on the dashboard which sets the current
