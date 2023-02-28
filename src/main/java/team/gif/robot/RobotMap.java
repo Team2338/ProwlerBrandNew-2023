@@ -8,7 +8,11 @@ public abstract class RobotMap {
     public static final int DRIVE_RIGHT_ONE = 0; //2
     public static final int DRIVE_RIGHT_TWO = 1; //3
 
-    // Other Motors
+    // Controllers
+    public static final int DRIVER_CONTROLLER_ID = 0;
+    public static final int AUX_CONTROLLER_ID = 1;
+
+//    // Other Motors
     public static final int INTAKE = 4; //4
     public static final int STAGE_TWO = 5; //5
     public static final int STAGE_THREE = 6; //6
@@ -36,15 +40,10 @@ public abstract class RobotMap {
     // Color Sensor
     public static final int COLOR_SENSOR = 0;
 
-    // Controllers
-    public static final int DRIVER_CONTROLLER_ID = 0;
-    public static final int AUX_CONTROLLER_ID = 1;
-
     //pigeon
     public static final int PIGEON = 2; // ony used on practice bot
 
     //Servo
     public static final int STAGE_4_SERVO = 1;
-
 
 }
