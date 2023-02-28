@@ -21,6 +21,19 @@ public class Pigeon {
         _pigeon = new PigeonIMU(talon);
     }
 
+    private static Pigeon instance = null;
+
+    public static Pigeon getInstance() {
+        if (instance == null) {
+            instance = new Pigeon();
+        }
+        return instance;
+    }
+
+    public Pigeon(){
+        _pigeon = new PigeonIMU(RobotMap.PIGEON);
+        instance = this;
+    }
     public void addToShuffleboard(String tabName, String widgetTitle) {
         // Puts a Gyro type widget on dashboard and assigns
         // the function getHeading_Shuffleboard

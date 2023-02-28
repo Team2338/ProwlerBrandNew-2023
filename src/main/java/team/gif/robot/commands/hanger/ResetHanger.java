@@ -1,22 +1,19 @@
-package team.gif.robot.commands.drivetrain;
+package team.gif.robot.commands.hanger;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import team.gif.robot.subsystems.Drivetrain;
-import team.gif.robot.subsystems.drivers.Pigeon;
+import team.gif.robot.Robot;
 
-public class ResetHeading extends CommandBase {
+public class ResetHanger extends CommandBase {
     //@SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
 
-    public ResetHeading() {
+    public ResetHanger() {
         // Use addRequirements() here to declare subsystem dependencies.
     }
 
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        Pigeon.getInstance().resetPigeonPosition();
-//        Drivetrain.resetEncoders();
-//        Drivetrain.resetPose();
+        Robot.hanger.zeroEncoder();
     }
 
     // Called every time the scheduler runs while the command is scheduled.

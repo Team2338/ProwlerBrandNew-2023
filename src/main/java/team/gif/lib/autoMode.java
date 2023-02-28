@@ -1,25 +1,22 @@
 package team.gif.lib;
 
 public enum autoMode {
-    SWERVE_POC(0),
-    ENGAGE(0),
-    PLACE_COLLECT(0),
-    PLACE_ENGAGE(0),
-    PLACE_CONE_HIGH_MOBILITY(0),
-    PLACE_CONE_MID_MOBILITY(0),
-    PLACE_CUBE_HIGH_MOBILITY(0),
-    PLACE_CUBE_MID_MOBILITY(0),
-    PLACE_MOBILITY_ENGAGE(0),
-    PLACE_COLLECT_PLACE(0),
-    ;
+
+    MOBILITY(0),
+    MOBILITY_FWD(0),
+    SAFE_3_BALL(0),
+    SAFE_6_BALL(0),
+    SAFE_8_BALL(0),
+    OPP_5_BALL(0),
+    BARREL_RACING(0),
+    SLALOM (0),
+    BOUNCE(0);
 
     private int value;
-
     autoMode(int value) {
         this.value = value;
     }
-
-    public int getValue() {
+    public int getValue(){
         return this.value;
     }
 }

@@ -1,6 +1,8 @@
 package team.gif.robot;
 
-// should be used sparinglv
 public abstract class Globals {
-    public static int goLocationTarget;
+    public static boolean indexerEnabled = true;
+    //public static boolean hangerActive = false;
+    public static boolean controlPanelMotorEnabled = false;
+    public static boolean autonomousModeActive = false;
 }
