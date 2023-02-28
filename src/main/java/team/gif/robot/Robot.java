@@ -8,6 +8,9 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import team.gif.robot.subsystems.Drivetrain;
+import team.gif.robot.subsystems.drivers.Limelight;
+import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -17,6 +20,10 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
     public static boolean isCompBot = false;
+    public static Drivetrain drivetrain;
+    public static Pigeon pigeon;
+    public static Limelight limelight;
+    public static OI oi;
 
     private Command m_autonomousCommand;
 
@@ -26,7 +33,10 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void robotInit() {
-
+        pigeon = new Pigeon(RobotMap.PIGEON);
+        drivetrain = new Drivetrain();
+        limelight = new Limelight();
+        oi = new OI();
     }
 
     /**
