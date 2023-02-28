@@ -150,27 +150,27 @@ public class Robot extends TimedRobot {
 //        collectorPneumatics.pneumaticsIn();
 
         System.out.println("robot init");
-        tabsetup();
+//        tabsetup();
         // autonomous chooser on the dashboard.
         m_robotContainer = new RobotContainer();
-        hanger = new Hanger();
-        indexer = new Indexer();
-        shooter = new Shooter();
-        intake = new Intake();
-        hanger.zeroEncoder();
+//        hanger = new Hanger();
+//        indexer = new Indexer();
+//        shooter = new Shooter();
+//        intake = new Intake();
+//        hanger.zeroEncoder();
 
         drivetrain = new Drivetrain();
-
         drivetrain.setDefaultCommand(new Drive());
+
 //        driveCommand = new Drive(drivetrain);
-        limelight = new Limelight();
+//        limelight = new Limelight();
 
         // Puts a button on the dashboard which sets the current
         // hanger position as the 0 position. Does this by calling
         // the commandBase specifically made for this ResetHanger()
         SmartDashboard.putData("Hanger", new ResetHanger());
-        setLimelightPipeline();
-        limelight.setLEDMode(1);//force off
+//        setLimelightPipeline();
+//        limelight.setLEDMode(1);//force off
 
         SmartDashboard.putData("ResetHead", new ResetHeading());
 
