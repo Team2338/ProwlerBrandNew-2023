@@ -28,7 +28,7 @@ public class Drivetrain extends SubsystemBase {
     public static MotorControllerGroup m_leftMotors;
     public static MotorControllerGroup m_rightMotors;
     public static DifferentialDriveOdometry m_odometry;
-    private static Pigeon m_pigeon;
+//    private static Pigeon m_pigeon;
     private static int maxCurrentAmps = 15;
 
     public Drivetrain() {
@@ -75,7 +75,7 @@ public class Drivetrain extends SubsystemBase {
 
 //        m_pigeon = Robot.isCompBot ? new Pigeon(leftTalon2) : new Pigeon();
 
-        m_pigeon.resetPigeonPosition(); // set initial heading of pigeon to zero degrees
+//        m_pigeon.resetPigeonPosition(); // set initial heading of pigeon to zero degrees
 
         resetEncoders();
 //        resetPose();
@@ -122,13 +122,13 @@ public class Drivetrain extends SubsystemBase {
     public void periodic() {
         // Update the odometry
 
-        if (m_pigeon.isActive()) {
-            m_odometry.update( Rotation2d.fromDegrees(m_pigeon.get180Heading()),
-                    getLeftEncoderPos_Meters(),
-                    getRightEncoderPos_Meters());
-        } else {
-            System.out.println("Cannot set robot odemetry. Pigeon is not in ready state.");
-        }
+//        if (m_pigeon.isActive()) {
+//            m_odometry.update( Rotation2d.fromDegrees(m_pigeon.get180Heading()),
+//                    getLeftEncoderPos_Meters(),
+//                    getRightEncoderPos_Meters());
+//        } else {
+//            System.out.println("Cannot set robot odemetry. Pigeon is not in ready state.");
+//        }
     }
 
     /**
@@ -173,9 +173,9 @@ public class Drivetrain extends SubsystemBase {
 //        m_odometry.resetPosition(new Pose2d(0, 0, Rotation2d.fromDegrees(0)), Rotation2d.fromDegrees(0));
 //    }
 
-    public void resetPigeon() {
-        m_pigeon.resetPigeonPosition();
-    }
+//    public void resetPigeon() {
+//        m_pigeon.resetPigeonPosition();
+//    }
 
     //encoder positions in Ticks
     public double getLeftEncoderPos_Ticks() {
