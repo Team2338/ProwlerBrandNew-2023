@@ -114,7 +114,7 @@ public class Drivetrain extends SubsystemBase {
 
     // ---------- Previous Auto Driving & Tank Drive -------
     public void setSpeed(double leftPercent, double rightPercent) {
-        m_drive.tankDrive(0.75 * leftPercent, 0.75 * rightPercent);
+        m_drive.tankDrive(leftPercent, rightPercent);
     }
 
     // -------------- new for Trajectory -------------------
