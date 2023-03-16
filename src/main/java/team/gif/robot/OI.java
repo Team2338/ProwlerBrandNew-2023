@@ -75,7 +75,6 @@ public class OI {
      */
         
         driver.rightBumper().whileTrue(new RapidFire());
-
     }
 
     public void setRumble(boolean rumble) {

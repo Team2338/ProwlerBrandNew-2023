@@ -4,13 +4,13 @@
 
 package team.gif.robot;
 
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.robot.commands.drivetrain.Drive;
 import team.gif.robot.subsystems.Drivetrain;
-import team.gif.robot.subsystems.drivers.Limelight;
+import team.gif.robot.subsystems.Indexer;
+import team.gif.robot.subsystems.Intake;
 import team.gif.robot.subsystems.drivers.Pigeon;
 
 /**
@@ -22,8 +22,9 @@ import team.gif.robot.subsystems.drivers.Pigeon;
 public class Robot extends TimedRobot {
     public static boolean isCompBot = false;
     public static Drivetrain drivetrain;
+    private static Indexer indexer;
+    private static Intake intake;
     public static Pigeon pigeon;
-    public static Limelight limelight;
     public static OI oi;
 
     private Command m_autonomousCommand;
@@ -36,7 +37,8 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         pigeon = new Pigeon(RobotMap.PIGEON);
         drivetrain = new Drivetrain();
-        limelight = new Limelight();
+        indexer = Indexer.getInstance();
+        intake = Intake.getInstance();
         oi = new OI();
 
         drivetrain.setDefaultCommand(new Drive());
@@ -114,6 +116,4 @@ public class Robot extends TimedRobot {
     public void updateauto(){
     }
 
-    public void setLimelightPipeline(){/**sets the limelight pipeline to red side or blue side**/
-    }
 }

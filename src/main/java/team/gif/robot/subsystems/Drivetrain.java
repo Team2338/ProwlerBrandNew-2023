@@ -29,7 +29,7 @@ public class Drivetrain extends SubsystemBase {
     public static MotorControllerGroup m_rightMotors;
     public static DifferentialDriveOdometry m_odometry;
 //    private static Pigeon m_pigeon;
-    private static int maxCurrentAmps = 15;
+    private static final int maxCurrentAmps = 15;
 
     public Drivetrain() {
         leftTalon1 = new WPI_TalonSRX(RobotMap.DRIVE_LEFT_ONE);
@@ -82,7 +82,6 @@ public class Drivetrain extends SubsystemBase {
     }
 
     public void currentLimitingSetup(){
-
         leftTalon1.configContinuousCurrentLimit(maxCurrentAmps);
         leftTalon2.configContinuousCurrentLimit(maxCurrentAmps);
         rightTalon1.configContinuousCurrentLimit(maxCurrentAmps);
