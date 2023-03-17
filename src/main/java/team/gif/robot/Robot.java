@@ -20,7 +20,7 @@ import team.gif.robot.subsystems.drivers.Pigeon;
  * project.
  */
 public class Robot extends TimedRobot {
-    public static boolean isCompBot = false;
+    public static boolean isCompBot = true;
     public static Drivetrain drivetrain;
     private static Indexer indexer;
     private static Intake intake;
