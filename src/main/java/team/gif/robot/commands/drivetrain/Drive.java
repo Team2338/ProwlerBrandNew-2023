@@ -35,18 +35,18 @@ public class Drive extends CommandBase {
          *                Arcade Drive
          */
         // Y-axis on X-box controller is negative when pushed away
-//        double currSpeed = -Robot.oi.driver.getLeftY();
-//        double currRotation = Robot.oi.driver.getRightX();
-//        Robot.drivetrain.driveArcade(currSpeed, currRotation);
+        double currSpeed = -Robot.oi.driver.getLeftY();
+        double currRotation = Robot.oi.driver.getRightX();
+        Robot.drivetrain.driveArcade(currSpeed, currRotation);
 
         /**
          *                Tank Drive
          */
         // Y-axis on X-box controller is negative when pushed away
 
-        double currLeft = -Robot.oi.driver.getLeftY();
-        double currRight = Robot.oi.driver.getRightY();
-        Robot.drivetrain.setSpeed(currLeft, currRight);
+//        double currLeft = -Robot.oi.driver.getLeftY();
+//        double currRight = Robot.oi.driver.getRightY();
+//        Robot.drivetrain.setSpeed(currLeft, currRight);
 
     }
 

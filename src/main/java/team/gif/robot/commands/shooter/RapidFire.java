@@ -19,12 +19,12 @@ public class RapidFire extends CommandBase {
 	
 	@Override
 	public void execute() {
-		Shooter.getInstance().setVoltage(10);
-		Indexer.getInstance().setSpeedFive(0.5);
-		Indexer.getInstance().setSpeedFour(0.4);
-		Indexer.getInstance().setSpeedThree(0.3);
-		Indexer.getInstance().setSpeedTwo(0.3);
-		Intake.getInstance().setSpeed(0.3);
+		Shooter.getInstance().setVoltage(15); //10
+		Indexer.getInstance().setSpeedFive(0.6); //.5
+		Indexer.getInstance().setSpeedFour(0.5); //.4
+		Indexer.getInstance().setSpeedThree(0.4); //.3
+		Indexer.getInstance().setSpeedTwo(0.4); //.3
+		Intake.getInstance().setSpeed(0.4); //.3
 	}
 	
 	@Override
