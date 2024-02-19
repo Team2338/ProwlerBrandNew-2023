@@ -103,7 +103,7 @@ public class Drivetrain extends SubsystemBase {
 
     // -------------- Teleop Driving -----------------------
     public void driveArcade(double speed, double rotation){
-        m_drive.arcadeDrive(speed,rotation);
+        m_drive.arcadeDrive(rotation, speed);
     }
 
     // -------------- Teleop Driving -----------------------
