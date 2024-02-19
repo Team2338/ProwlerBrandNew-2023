@@ -1,9 +1,8 @@
 package team.gif.robot.subsystems;
 
-import com.revrobotics.CANEncoder;
-import com.revrobotics.CANPIDController;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import team.gif.robot.Constants;
 import team.gif.robot.Robot;
@@ -19,38 +18,21 @@ public class Shooter extends SubsystemBase {
 		return instance;
 	}
 	
-	private static final CANSparkMax flywheelMotor = new CANSparkMax(RobotMap.FLYWHEEL, CANSparkMaxLowLevel.MotorType.kBrushless);
-	private static final CANPIDController flywheelPIDController = flywheelMotor.getPIDController();
-	private static final CANEncoder flywheelEncoder = flywheelMotor.getEncoder();
-	
-	int stallMaxAmps = 40;
-	
+//	private static final CANSparkMax flywheelMotor = new CANSparkMax(RobotMap.FLYWHEEL, CANSparkMaxLowLevel.MotorType.kBrushless);
+//	private static final CANPIDController flywheelPIDController = flywheelMotor.getPIDController();
+//	private static final CANEncoder flywheelEncoder = flywheelMotor.getEncoder();
+
+	private static final TalonSRX flywheelMotor = new TalonSRX(RobotMap.FLYWHEEL);
+
 	
 	private Shooter() {
 		super();
-		flywheelMotor.restoreFactoryDefaults();
-		flywheelMotor.enableVoltageCompensation(12);
-		flywheelMotor.setInverted(!Robot.isCompBot); // C:false P:true
-		flywheelMotor.setIdleMode(CANSparkMax.IdleMode.kCoast);
-		
-		flywheelPIDController.setP(Constants.Shooter.kP);
-		flywheelPIDController.setFF(Constants.Shooter.kF);
-		flywheelPIDController.setOutputRange(0, 1);
-		
-		flywheelMotor.setSmartCurrentLimit(stallMaxAmps,stallMaxAmps);
-		
-		flywheelMotor.burnFlash();
-		//https://www.chiefdelphi.com/t/spark-max-current-limit/354333/3
+		flywheelMotor.configFactoryDefault();
+		flywheelMotor.setNeutralMode(NeutralMode.Coast);
+    }
+	
+	public void setSpeed(double percent) {
+		flywheelMotor.set(TalonSRXControlMode.PercentOutput, percent);
 	}
 	
-	public void setVoltage(double voltage) {
-		flywheelMotor.setVoltage(voltage);
-	}
-	
-	public void setPID (double setPoint) {
-		flywheelPIDController.setReference(setPoint, CANSparkMax.ControlType.kVelocity);
-	}
-	public double getVelocity () { return flywheelEncoder.getVelocity();}
-	
-	public String getVelocity_Shuffleboard(){ return String.format("%12.0f",getVelocity());}
 }
