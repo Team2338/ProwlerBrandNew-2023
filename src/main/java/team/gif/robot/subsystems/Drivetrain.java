@@ -29,7 +29,7 @@ public class Drivetrain extends SubsystemBase {
     public static MotorControllerGroup m_rightMotors;
     public static DifferentialDriveOdometry m_odometry;
 //    private static Pigeon m_pigeon;
-    private static final int maxCurrentAmps = 15;
+    private static final int maxCurrentAmps = 20;
 
     public Drivetrain() {
         leftTalon1 = new WPI_TalonSRX(RobotMap.DRIVE_LEFT_ONE);
