@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import team.gif.robot.commands.Collect;
 import team.gif.robot.commands.shooter.RapidFire;
 
 public class OI {
@@ -75,6 +76,7 @@ public class OI {
      */
         
         driver.rightBumper().whileTrue(new RapidFire());
+        driver.leftBumper().whileTrue(new Collect());
     }
 
     public void setRumble(boolean rumble) {
